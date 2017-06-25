@@ -18,14 +18,14 @@ public class InfoWrapper {
 	}
 	
 	/**
-	 * Returns instance of <code>U</code>, an element of <code>sourceCollection</code> that corresponds to <code>wrapped</code>.
+	 * Returns instance of <code>U</code>, an element of <code>sourceCollection</code> which when wrapped is equal to <code>wrapped</code>.
 	 * <p>
-	 * Returns <code>null</code> if not corresponding element of <code>sourceCollection</code> represents <code>wrapped</code>.
+	 * Returns <code>null</code> if no corresponding element of <code>sourceCollection</code> represents <code>wrapped</code>.
 	 */
 	public static <T, U extends InfoSource<T>> U unwrap(Collection<U> sourceCollection, T wrapped){
 		U ut = null;
 		for ( U source : sourceCollection ){
-			if ( source.info() == wrapped )
+			if ( source.info().equals(wrapped) )
 				ut = source;
 		}
 		return ut;
